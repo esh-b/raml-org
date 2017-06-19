@@ -9,7 +9,7 @@ permalink: /projects
         <section class="col-md-12 projectdiv">
            <div class="row">
                <div class="col-md-6">
-                   <p>Do you want to list your own project on raml.org? Add it <a href="#" rel="nofollow">Here</a>. </p>
+                   <p>Do you want to list your own project on raml.org? Add it <a href="{{ site.projectsgithuburl }}#how-to-add-projects-to-the-projects-page" rel="nofollow">here</a>. </p>
                </div>
 
                <div class="col-md-6">
@@ -30,7 +30,7 @@ permalink: /projects
                    <li><a data-toggle="pill" href="#test">Test</a></li>
                    <li><a data-toggle="pill" href="#document">Document</a></li>
                    <li><a data-toggle="pill" href="#parsers">Parsers</a></li>
-                   <li><a data-toggle="pill" href="#converters">Converters</a></li>
+                   <li><a data-toggle="pill" href="#utility">Utilities</a></li>
                </ul>
 
                <div class="tab-content">
@@ -38,8 +38,6 @@ permalink: /projects
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
-
 
                            <div class="row">
 
@@ -56,11 +54,11 @@ permalink: /projects
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endfor %}
                         <div class="pagination-page-all"></div>
@@ -70,12 +68,9 @@ permalink: /projects
                    <div id="design" class="tab-pane fade in">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Design' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Design' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -91,13 +86,14 @@ permalink: /projects
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-design"></div>
 
@@ -105,12 +101,9 @@ permalink: /projects
                    <div id="build" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Build' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Build' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -122,29 +115,27 @@ permalink: /projects
                                </div>
 
                                <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-build"></div>
                    </div>
                    <div id="test" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Test' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Test' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -156,29 +147,27 @@ permalink: /projects
                                </div>
 
                                <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-test"></div>
                    </div>
                    <div id="document" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Document' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Document' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -190,29 +179,27 @@ permalink: /projects
                                </div>
 
                                <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-document"></div>
                    </div>
                    <div id="parsers" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Parsers' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Parsers' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -224,29 +211,27 @@ permalink: /projects
                                </div>
 
                                <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-parsers"></div>
                    </div>
-                   <div id="converters" class="tab-pane fade">
+                   <div id="utility" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Converters' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Utilities' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -258,69 +243,63 @@ permalink: /projects
                                </div>
 
                                <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
                        {% endfor %}
-                       <div class="pagination-page-converters"></div>
+                       {% endfor %}
+                       <div class="pagination-page-utility"></div>
                    </div>
 
            </div>
         </div>
     </section>
-    </div>
-</div>
-<section class="projectlinks">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <div class = "proj_logo">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <a href="https://github.com/search?utf8=✓&q=topic%3Araml-design" target="_blank" rel="nofollow"> <img src="images/RAMLicondesign.png" style="width: 40px;" /> </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="https://github.com/search?utf8=✓&q=topic%3Araml-build" target="_blank" rel="nofollow"> <img src="images/RAMLiconbuild.png" style="width: 28px;" /></a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="https://github.com/search?utf8=✓&q=topic%3Araml-test" target="_blank" rel="nofollow"> <img src="images/RAMLicontest.svg" /></a>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-md-2">
-                            <a href="https://github.com/search?utf8=✓&q=topic%3Araml-document" target="_blank" rel="nofollow"> <img src="images/RAMLicondocument.png" /></a>
-                        </div>
-                        <div class="col-md-2">
-                           <a href = "https://github.com/search?utf8=✓&q=topic%3Araml-parsers" target="_blank" rel="nofollow"> <img src="images/missing_icon.png" /><br />
-                            <img src="images/PARSERS.png" style="margin-top: -6px; width: 26px; margin-left: 4px;" /></a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="https://github.com/search?utf8=✓&q=topic%3Araml-converters" target="_blank" rel="nofollow"> <img src="images/missing_icon.png" /><br />
-                            <img src="images/CONVERTERS.png" style="margin-top: -6px; width: 26px; margin-left: 5px;" /></a>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
 
-            <div class="col-md-7">
+<section class="col-md-12 projectlinks">
+    <div class="row">
+            <div class="col-md-12" style="width: 65%;">
                 <p><img src="images/githubicon_01.png" /> &nbsp;<strong>Github</strong></p>
-                <p>Can’t find the RAML project you are searching for on this page? Try looking for it in Github! We created some useful categories to help filter your search. Simply click on one of the icons on the left and see all the Github projects related to that category.</p>
+                <p>Can’t find the RAML project you are searching for on this page? Try looking for it in Github! We created some useful categories to help filter your search. Simply click on one of the icons on the left and see all the Github projects related to that category. More information can be found <a href="{{ site. projectsgithuburl }}#how-to-add-projects-to-the-projects-page" target="_blank">here</a>.</p>
+            </div>
+    </div>
 
+        <div class="row" style="margin-bottom: 5px;">
+            <div class="col-md-1">
+                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-design" target="_blank" rel="nofollow">Design</a>
+            </div>
+            <div class="col-md-1">
+                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-document" target="_blank" rel="nofollow">Document</a>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 5px;">
+            <div class="col-md-1">
+                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-build" target="_blank" rel="nofollow">Build</a>
+            </div>
+            <div class="col-md-1">
+                <a href = "https://github.com/search?utf8=✓&q=topic%3Araml-parser" target="_blank" rel="nofollow">Parser</a>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 5px;">
+            <div class="col-md-1">
+                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-test" target="_blank" rel="nofollow">Test</a>
+            </div>
+            <div class="col-md-1">
+                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-utilities" target="_blank" rel="nofollow">Utilities</a>
             </div>
         </div>
     </div>
 </section>
-
+    </div>
+</div>
 
 <script src="/js/pagination.js"></script>
 <script src="js/main.js"></script>
